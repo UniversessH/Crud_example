@@ -1,0 +1,48 @@
+<!--本项目使用ejs作为html渲染引擎-->
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+  <meta charset="utf-8">
+  <title>MY_APP</title>
+</head>
+
+<body>
+  <h1>Hello CRUD</h1>
+  <form action = "/quotes" method = "POST">
+    <input type = "text" placeholder = "name" name = "name">
+    <input type = "text" placeholder = "quote" name = "quote">
+    <button type = "submit">Submit</button>
+  </form>
+
+  <hr>
+
+  <h2>Quotes</h2>
+  <ul class = "quotes">
+    <% for(let i=0 ; i < quotes.length ; i++) {%>
+      <li class = "quote">
+        <sapn><%= quotes[i].name %></sapn>
+        <span><%= quotes[i].quote %></span>
+      </li>
+    <% } %>
+  </ul>
+
+  <hr>
+
+  <div>
+    <h2>Wish everything okey</h2>
+    <p>Replace this sentence</p>
+    <button id = "update-button">Relace that sentence</button>
+  </div>
+
+  <hr>
+
+  <div>
+    <h2>We've got our Wish</h2>
+    <p>delete data!</p>
+  </div>
+  <button id = "delete_button">Delte it!</button>
+  <script type = "module" src = "/main.js"></script> <!--这里不要再写/public-->
+</body>
+
+</html>
